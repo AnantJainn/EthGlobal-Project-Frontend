@@ -39,7 +39,7 @@
 
 // const Home = () => {
 // 	const { changeBackground, background } = useContext(ThemeContext);
-	
+
 // 	const [control3, setControl3] = useState('Newest');
 // 	const [userPurchases, setUserPurchases] = useState(null);
 //   const [siteCount, setSiteCount] = useState(0);
@@ -60,25 +60,25 @@
 // 	  }
 // 	}, [userId]);
 
- 
+
 
 // 	const fetchUserPurchases = async () => {
 // 		try {
 // 		  const response = await fetch(
-// 			`https://enfros-solutions-backend-1.onrender.com/api/v1/sites/user-purchases/${userId}`
+// 			`https://ethglobal-project-backend.onrender.com/api/v1/sites/user-purchases/${userId}`
 // 		  );
-	
+
 // 		  const data = await response.json();
 // 		  console.log("Data: ", data)
-	
+
 // 		  if (response.ok) {
 // 			setUserPurchases(data.purchases);
-	         
+
 // 			const siteCountFromResponse = data.userSites?.siteCount || 0
 // 			// Extract and set values from API response
 // 			const totalCapacity = data.purchases.reduce((sum, p) => sum + p.purchasedkWp, 0);
 // 			const totalInvestment = data.purchases.reduce((sum, p) => sum + p.totalPrice, 0);
-	
+
 // 			setSiteCount(siteCountFromResponse);
 // 			setPurchasedkWp(totalCapacity);
 // 			setTotalPrice(totalInvestment);
@@ -90,11 +90,11 @@
 // 		}
 // 	  };
 
-	  
+
 // 	  const fetchTotalReturn = async (userId) => {
 // 		try {
 // 		  const response = await fetch(
-// 			`https://enfros-solutions-backend-1.onrender.com/api/v1/users/${userId}/totalReturn`
+// 			`https://ethglobal-project-backend.onrender.com/api/v1/users/${userId}/totalReturn`
 // 		  );
 // 		  const data = await response.json();
 // 		  if (response.ok) {
@@ -112,7 +112,7 @@
 // 				<div className="col-xl-12">
 
 // 					<div className="row">
-					
+
 // 						<div className="col-xl-12">
 // 							<div className="card">
 // 								<div className="card-body">
@@ -263,7 +263,7 @@
 //   const fetchUserPurchases = async () => {
 //     try {
 //       const response = await fetch(
-//         `https://enfros-solutions-backend-1.onrender.com/api/v1/sites/user-purchases/${userId}`
+//         `https://ethglobal-project-backend.onrender.com/api/v1/sites/user-purchases/${userId}`
 //       );
 //       const data = await response.json();
 
@@ -338,7 +338,7 @@
 //   const fetchTotalReturn = async (userId) => {
 //     try {
 //       const response = await fetch(
-//         `https://enfros-solutions-backend-1.onrender.com/api/v1/users/${userId}/totalReturn`
+//         `https://ethglobal-project-backend.onrender.com/api/v1/users/${userId}/totalReturn`
 //       );
 //       const data = await response.json();
 //       if (response.ok) {
@@ -497,7 +497,7 @@
 //   const fetchUserPurchases = async () => {
 //     try {
 //       const response = await fetch(
-//         `https://enfros-solutions-backend-1.onrender.com/api/v1/sites/user-purchases/${userId}`
+//         `https://ethglobal-project-backend.onrender.com/api/v1/sites/user-purchases/${userId}`
 //       );
 //       const data = await response.json();
 
@@ -572,7 +572,7 @@
 //   const fetchTotalReturn = async (userId) => {
 //     try {
 //       const response = await fetch(
-//         `https://enfros-solutions-backend-1.onrender.com/api/v1/users/${userId}/totalReturn`
+//         `https://ethglobal-project-backend.onrender.com/api/v1/users/${userId}/totalReturn`
 //       );
 //       const data = await response.json();
 //       if (response.ok) {
@@ -744,7 +744,7 @@
 //   const fetchUserPurchases = async () => {
 //     try {
 //       const response = await fetch(
-//         `https://enfros-solutions-backend-1.onrender.com/api/v1/sites/user-purchases/${userId}`
+//         `https://ethglobal-project-backend.onrender.com/api/v1/sites/user-purchases/${userId}`
 //       );
 //       const data = await response.json();
 
@@ -1021,7 +1021,7 @@
 //   const fetchUserPurchases = async () => {
 //     try {
 //       const response = await fetch(
-//         `https://enfros-solutions-backend-1.onrender.com/api/v1/sites/user-purchases/${userId}`
+//         `https://ethglobal-project-backend.onrender.com/api/v1/sites/user-purchases/${userId}`
 //       );
 //       const data = await response.json();
 
@@ -1044,7 +1044,7 @@
 //         const totalReturn = await calculateTotalReturn(data.purchases);
 //         setUserTotalReturn(totalReturn);  // Set the total return
 //         try {
-//           await fetch(`https://enfros-solutions-backend-1.onrender.com/api/v1/users/${userId}/updateTotalReturn`, {
+//           await fetch(`https://ethglobal-project-backend.onrender.com/api/v1/users/${userId}/updateTotalReturn`, {
 //             method: "PUT",
 //             headers: {
 //               "Content-Type": "application/json",
@@ -1330,7 +1330,7 @@ const Home = () => {
   const fetchUserPurchases = async () => {
     try {
       const response = await fetch(
-        `https://enfros-solutions-backend-1.onrender.com/api/v1/sites/user-purchases/${userId}`
+        `https://ethglobal-project-backend.onrender.com/api/v1/sites/user-purchases/${userId}`
       );
       const data = await response.json();
 
@@ -1374,7 +1374,7 @@ const Home = () => {
       // Update total return in the backend
       try {
         await fetch(
-          `https://enfros-solutions-backend-1.onrender.com/api/v1/users/${userId}/updateTotalReturn`,
+          `https://ethglobal-project-backend.onrender.com/api/v1/users/${userId}/updateTotalReturn`,
           {
             method: "PUT",
             headers: { "Content-Type": "application/json" },

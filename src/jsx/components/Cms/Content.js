@@ -74,7 +74,7 @@
 //   const fetchUserPurchases = async () => {
 //     try {
 //       const response = await fetch(
-//         `https://enfros-solutions-backend-1.onrender.com/api/v1/sites/user-purchases/${userId}`
+//         `https://ethglobal-project-backend.onrender.com/api/v1/sites/user-purchases/${userId}`
 //       );
 
 //       const data = await response.json();
@@ -264,7 +264,7 @@ const Content = () => {
   const fetchUserPurchases = async () => {
     try {
       const response = await fetch(
-        `https://enfros-solutions-backend-1.onrender.com/api/v1/sites/user-purchases/${userId}`
+        `https://ethglobal-project-backend.onrender.com/api/v1/sites/user-purchases/${userId}`
       );
       const data = await response.json();
 
@@ -470,9 +470,8 @@ const Content = () => {
                               <Link
                                 key={i}
                                 to="/dashboard"
-                                className={`paginate_button  ${
-                                  activePag.current === i ? "current" : ""
-                                }`}
+                                className={`paginate_button  ${activePag.current === i ? "current" : ""
+                                  }`}
                                 onClick={() => onClick(i)}
                               >
                                 {number}

@@ -108,7 +108,7 @@ const Payout = () => {
 
       try {
         const res = await fetch(
-          `https://enfros-solutions-backend-1.onrender.com/api/v1/users/${userId}`
+          `https://ethglobal-project-backend.onrender.com/api/v1/users/${userId}`
         );
         const data = await res.json();
         console.log("Data: ", data);
@@ -149,7 +149,7 @@ const Payout = () => {
     const createContact = async () => {
       try {
         const res = await fetch(
-          "https://enfros-solutions-backend-1.onrender.com/api/v1/payout/create-contact",
+          "https://ethglobal-project-backend.onrender.com/api/v1/payout/create-contact",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -204,7 +204,7 @@ const Payout = () => {
 
   //   try {
   //     const res = await fetch(
-  //       "https://enfros-solutions-backend-1.onrender.com/api/v1/payout/create-fund-account",
+  //       "https://ethglobal-project-backend.onrender.com/api/v1/payout/create-fund-account",
   //       {
   //         method: "POST",
   //         headers: { "Content-Type": "application/json" },
@@ -226,7 +226,7 @@ const Payout = () => {
 
   //       if (userId) {
   //         await fetch(
-  //           `https://enfros-solutions-backend-1.onrender.com/api/v1/users/${userId}/save-fund-account`,
+  //           `https://ethglobal-project-backend.onrender.com/api/v1/users/${userId}/save-fund-account`,
   //           {
   //             method: "PUT",
   //             headers: { "Content-Type": "application/json" },
@@ -261,22 +261,22 @@ const Payout = () => {
       account_type: accountType,
       ...(accountType === "bank_account"
         ? {
-            bank_account: {
-              name: form.name,
-              ifsc: form.ifsc,
-              account_number: form.account_number,
-            },
-          }
+          bank_account: {
+            name: form.name,
+            ifsc: form.ifsc,
+            account_number: form.account_number,
+          },
+        }
         : {
-            vpa: {
-              address: form.vpa,
-            },
-          }),
+          vpa: {
+            address: form.vpa,
+          },
+        }),
     };
 
     try {
       const res = await fetch(
-        "https://enfros-solutions-backend-1.onrender.com/api/v1/payout/create-fund-account",
+        "https://ethglobal-project-backend.onrender.com/api/v1/payout/create-fund-account",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -302,7 +302,7 @@ const Payout = () => {
 
         if (userId) {
           await fetch(
-            `https://enfros-solutions-backend-1.onrender.com/api/v1/users/${userId}/save-fund-account`,
+            `https://ethglobal-project-backend.onrender.com/api/v1/users/${userId}/save-fund-account`,
             {
               method: "PUT",
               headers: { "Content-Type": "application/json" },
@@ -371,7 +371,7 @@ const Payout = () => {
 
   //   try {
   //     const res = await fetch(
-  //       "https://enfros-solutions-backend-1.onrender.com/api/v1/payout/create-payout",
+  //       "https://ethglobal-project-backend.onrender.com/api/v1/payout/create-payout",
   //       {
   //         method: "POST",
   //         headers: { "Content-Type": "application/json" },
@@ -387,7 +387,7 @@ const Payout = () => {
   //         `Payout Created: ${data.id}. Rewards withdrawl successfully. It will take some time to reflect in your account`
   //       );
   //       await fetch(
-  //         `https://enfros-solutions-backend-1.onrender.com/api/v1/users/${userId}/claimReward`,
+  //         `https://ethglobal-project-backend.onrender.com/api/v1/users/${userId}/claimReward`,
   //         {
   //           method: "PUT",
   //           headers: { "Content-Type": "application/json" },

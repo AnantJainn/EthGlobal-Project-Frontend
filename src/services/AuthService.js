@@ -3,7 +3,7 @@ import swal from "sweetalert";
 import { loginConfirmedAction, Logout } from "../store/actions/AuthActions";
 
 // Node.js backend endpoints
-const BASE_URL = "https://enfros-solutions-backend-1.onrender.com/api/v1";
+const BASE_URL = "https://ethglobal-project-backend.onrender.com/api/v1";
 
 /**
  * Format and display error messages.
