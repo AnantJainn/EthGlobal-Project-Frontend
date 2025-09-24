@@ -2204,7 +2204,7 @@
 //     const addSite = async () => {
 //       const cleanedPlantSize = parseFloat(nft.plantSize);
 //       try {
-//         const response = await fetch(`https://ethglobal-project-backend.onrender.com/api/v1/sites/site-details`, {
+//         const response = await fetch(`https://ethglobal.azurewebsites.net/api/v1/sites/site-details`, {
 //           method: "POST",
 //           headers: { "Content-Type": "application/json" },
 //           body: JSON.stringify({
@@ -2270,7 +2270,7 @@
 
 //     try {
 //       const orderResponse = await fetch(
-//         `https://ethglobal-project-backend.onrender.com/api/v1/payment/create/order`,
+//         `https://ethglobal.azurewebsites.net/api/v1/payment/create/order`,
 //         {
 //           method: "POST",
 //           headers: { "Content-Type": "application/json" },
@@ -2314,7 +2314,7 @@
 
 //     try {
 //       const verifyResponse = await fetch(
-//         `https://ethglobal-project-backend.onrender.com/api/v1/payment/verify/order`,
+//         `https://ethglobal.azurewebsites.net/api/v1/payment/verify/order`,
 //         {
 //           method: "POST",
 //           headers: {
@@ -2334,7 +2334,7 @@
 //       alert(`Payment successful for ${nft.title}`);
 
 //       // After successful payment, add the site
-//       await fetch(`https://ethglobal-project-backend.onrender.com/api/v1/sites/site-details`, {
+//       await fetch(`https://ethglobal.azurewebsites.net/api/v1/sites/site-details`, {
 //         method: "POST",
 //         headers: { "Content-Type": "application/json" },
 //         body: JSON.stringify({
@@ -2346,7 +2346,7 @@
 //       });
 
 //       // Then, update the kWp purchase
-//       await fetch(`https://ethglobal-project-backend.onrender.com/api/v1/sites/site-details`, {
+//       await fetch(`https://ethglobal.azurewebsites.net/api/v1/sites/site-details`, {
 //         method: "POST",
 //         headers: { "Content-Type": "application/json" },
 //         body: JSON.stringify({
@@ -2992,7 +2992,7 @@
 //       const cleanedPlantSize = parseFloat(nft.plantSize);
 //       try {
 //         const response = await fetch(
-//           `https://ethglobal-project-backend.onrender.com/api/v1/sites/site-details`,
+//           `https://ethglobal.azurewebsites.net/api/v1/sites/site-details`,
 //           {
 //             method: "POST",
 //             headers: { "Content-Type": "application/json" },
@@ -3131,7 +3131,7 @@
 
 //     try {
 //       const orderResponse = await fetch(
-//         `https://ethglobal-project-backend.onrender.com/api/v1/payment/create/order`,
+//         `https://ethglobal.azurewebsites.net/api/v1/payment/create/order`,
 //         {
 //           method: "POST",
 //           headers: { "Content-Type": "application/json" },
@@ -3270,7 +3270,7 @@
 //       alert("Purchase successful! 🎉");
 //       // Inside purchaseWithUSDC function after successful TX
 //       await fetch(
-//         `https://ethglobal-project-backend.onrender.com/api/v1/sites/site-details`,
+//         `https://ethglobal.azurewebsites.net/api/v1/sites/site-details`,
 //         {
 //           method: "POST",
 //           headers: { "Content-Type": "application/json" },
@@ -3306,7 +3306,7 @@
 
 //     try {
 //       const verifyResponse = await fetch(
-//         `https://ethglobal-project-backend.onrender.com/api/v1/payment/verify/order`,
+//         `https://ethglobal.azurewebsites.net/api/v1/payment/verify/order`,
 //         {
 //           method: "POST",
 //           headers: {
@@ -3327,7 +3327,7 @@
 
 //       // After successful payment, add the site
 //       await fetch(
-//         `https://ethglobal-project-backend.onrender.com/api/v1/sites/site-details`,
+//         `https://ethglobal.azurewebsites.net/api/v1/sites/site-details`,
 //         {
 //           method: "POST",
 //           headers: { "Content-Type": "application/json" },
@@ -3342,7 +3342,7 @@
 
 //       // Then, update the kWp purchase
 //       await fetch(
-//         `https://ethglobal-project-backend.onrender.com/api/v1/sites/site-details`,
+//         `https://ethglobal.azurewebsites.net/api/v1/sites/site-details`,
 //         {
 //           method: "POST",
 //           headers: { "Content-Type": "application/json" },
@@ -4086,7 +4086,7 @@ const UserProfile = ({ nft, goBack }) => {
       const cleanedPlantSize = parseFloat(nft.plantSize);
       try {
         const response = await fetch(
-          `https://ethglobal-project-backend.onrender.com/api/v1/sites/site-details`,
+          `https://ethglobal.azurewebsites.net/api/v1/sites/site-details`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -4282,7 +4282,7 @@ const UserProfile = ({ nft, goBack }) => {
 
     try {
       const orderResponse = await fetch(
-        `https://ethglobal-project-backend.onrender.com/api/v1/payment/create/order`,
+        `https://ethglobal.azurewebsites.net/api/v1/payment/create/order`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -4426,7 +4426,7 @@ const UserProfile = ({ nft, goBack }) => {
       alert("Purchase successful! 🎉");
       // Inside purchaseWithUSDC function after successful TX
       await fetch(
-        `https://ethglobal-project-backend.onrender.com/api/v1/sites/site-details`,
+        `https://ethglobal.azurewebsites.net/api/v1/sites/site-details`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -4462,7 +4462,7 @@ const UserProfile = ({ nft, goBack }) => {
 
     try {
       const verifyResponse = await fetch(
-        `https://ethglobal-project-backend.onrender.com/api/v1/payment/verify/order`,
+        `https://ethglobal.azurewebsites.net/api/v1/payment/verify/order`,
         {
           method: "POST",
           headers: {
@@ -4483,7 +4483,7 @@ const UserProfile = ({ nft, goBack }) => {
 
       // After successful payment, add the site
       await fetch(
-        `https://ethglobal-project-backend.onrender.com/api/v1/sites/site-details`,
+        `https://ethglobal.azurewebsites.net/api/v1/sites/site-details`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -4498,7 +4498,7 @@ const UserProfile = ({ nft, goBack }) => {
 
       // Then, update the kWp purchase
       await fetch(
-        `https://ethglobal-project-backend.onrender.com/api/v1/sites/site-details`,
+        `https://ethglobal.azurewebsites.net/api/v1/sites/site-details`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -4526,7 +4526,7 @@ const UserProfile = ({ nft, goBack }) => {
       });
       // await mintNFTs(userDetails.walletAddress, kWp);
       const mintResponse = await fetch(
-        `https://ethglobal-project-backend.onrender.com/api/v1/mint`,
+        `https://ethglobal.azurewebsites.net/api/v1/mint`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

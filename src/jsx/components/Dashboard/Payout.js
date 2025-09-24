@@ -108,7 +108,7 @@ const Payout = () => {
 
       try {
         const res = await fetch(
-          `https://ethglobal-project-backend.onrender.com/api/v1/users/${userId}`
+          `https://ethglobal.azurewebsites.net/api/v1/users/${userId}`
         );
         const data = await res.json();
         console.log("Data: ", data);
@@ -149,7 +149,7 @@ const Payout = () => {
     const createContact = async () => {
       try {
         const res = await fetch(
-          "https://ethglobal-project-backend.onrender.com/api/v1/payout/create-contact",
+          "https://ethglobal.azurewebsites.net/api/v1/payout/create-contact",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -204,7 +204,7 @@ const Payout = () => {
 
   //   try {
   //     const res = await fetch(
-  //       "https://ethglobal-project-backend.onrender.com/api/v1/payout/create-fund-account",
+  //       "https://ethglobal.azurewebsites.net/api/v1/payout/create-fund-account",
   //       {
   //         method: "POST",
   //         headers: { "Content-Type": "application/json" },
@@ -226,7 +226,7 @@ const Payout = () => {
 
   //       if (userId) {
   //         await fetch(
-  //           `https://ethglobal-project-backend.onrender.com/api/v1/users/${userId}/save-fund-account`,
+  //           `https://ethglobal.azurewebsites.net/api/v1/users/${userId}/save-fund-account`,
   //           {
   //             method: "PUT",
   //             headers: { "Content-Type": "application/json" },
@@ -276,7 +276,7 @@ const Payout = () => {
 
     try {
       const res = await fetch(
-        "https://ethglobal-project-backend.onrender.com/api/v1/payout/create-fund-account",
+        "https://ethglobal.azurewebsites.net/api/v1/payout/create-fund-account",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -302,7 +302,7 @@ const Payout = () => {
 
         if (userId) {
           await fetch(
-            `https://ethglobal-project-backend.onrender.com/api/v1/users/${userId}/save-fund-account`,
+            `https://ethglobal.azurewebsites.net/api/v1/users/${userId}/save-fund-account`,
             {
               method: "PUT",
               headers: { "Content-Type": "application/json" },
@@ -371,7 +371,7 @@ const Payout = () => {
 
   //   try {
   //     const res = await fetch(
-  //       "https://ethglobal-project-backend.onrender.com/api/v1/payout/create-payout",
+  //       "https://ethglobal.azurewebsites.net/api/v1/payout/create-payout",
   //       {
   //         method: "POST",
   //         headers: { "Content-Type": "application/json" },

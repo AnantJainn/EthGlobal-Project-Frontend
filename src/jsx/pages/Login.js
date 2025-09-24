@@ -160,7 +160,7 @@ function Login() {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		fetch('https://ethglobal-project-backend.onrender.com/api/v1/users')
+		fetch('https://ethglobal.azurewebsites.net/api/v1/users')
 			.then(() => console.log('Backend warmed up'))
 			.catch(err => console.error('Ping failed', err));
 	}, []);

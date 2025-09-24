@@ -195,7 +195,7 @@ function Register() {
         try {
             setLoading(true);
             const response = await sendOtp(email); // Send OTP
-            // console.log("OTP sent:", response.message);
+            console.log("OTP sent:", response.message);
             setStep(2); // Move to OTP step
         } catch (error) {
             console.error("Error sending OTP:", error.message);

@@ -74,7 +74,7 @@
 //   const fetchUserPurchases = async () => {
 //     try {
 //       const response = await fetch(
-//         `https://ethglobal-project-backend.onrender.com/api/v1/sites/user-purchases/${userId}`
+//         `https://ethglobal.azurewebsites.net/api/v1/sites/user-purchases/${userId}`
 //       );
 
 //       const data = await response.json();
@@ -264,7 +264,7 @@ const Content = () => {
   const fetchUserPurchases = async () => {
     try {
       const response = await fetch(
-        `https://ethglobal-project-backend.onrender.com/api/v1/sites/user-purchases/${userId}`
+        `https://ethglobal.azurewebsites.net/api/v1/sites/user-purchases/${userId}`
       );
       const data = await response.json();
 

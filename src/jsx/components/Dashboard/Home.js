@@ -65,7 +65,7 @@
 // 	const fetchUserPurchases = async () => {
 // 		try {
 // 		  const response = await fetch(
-// 			`https://ethglobal-project-backend.onrender.com/api/v1/sites/user-purchases/${userId}`
+// 			`https://ethglobal.azurewebsites.net/api/v1/sites/user-purchases/${userId}`
 // 		  );
 
 // 		  const data = await response.json();
@@ -94,7 +94,7 @@
 // 	  const fetchTotalReturn = async (userId) => {
 // 		try {
 // 		  const response = await fetch(
-// 			`https://ethglobal-project-backend.onrender.com/api/v1/users/${userId}/totalReturn`
+// 			`https://ethglobal.azurewebsites.net/api/v1/users/${userId}/totalReturn`
 // 		  );
 // 		  const data = await response.json();
 // 		  if (response.ok) {
@@ -263,7 +263,7 @@
 //   const fetchUserPurchases = async () => {
 //     try {
 //       const response = await fetch(
-//         `https://ethglobal-project-backend.onrender.com/api/v1/sites/user-purchases/${userId}`
+//         `https://ethglobal.azurewebsites.net/api/v1/sites/user-purchases/${userId}`
 //       );
 //       const data = await response.json();
 
@@ -338,7 +338,7 @@
 //   const fetchTotalReturn = async (userId) => {
 //     try {
 //       const response = await fetch(
-//         `https://ethglobal-project-backend.onrender.com/api/v1/users/${userId}/totalReturn`
+//         `https://ethglobal.azurewebsites.net/api/v1/users/${userId}/totalReturn`
 //       );
 //       const data = await response.json();
 //       if (response.ok) {
@@ -497,7 +497,7 @@
 //   const fetchUserPurchases = async () => {
 //     try {
 //       const response = await fetch(
-//         `https://ethglobal-project-backend.onrender.com/api/v1/sites/user-purchases/${userId}`
+//         `https://ethglobal.azurewebsites.net/api/v1/sites/user-purchases/${userId}`
 //       );
 //       const data = await response.json();
 
@@ -572,7 +572,7 @@
 //   const fetchTotalReturn = async (userId) => {
 //     try {
 //       const response = await fetch(
-//         `https://ethglobal-project-backend.onrender.com/api/v1/users/${userId}/totalReturn`
+//         `https://ethglobal.azurewebsites.net/api/v1/users/${userId}/totalReturn`
 //       );
 //       const data = await response.json();
 //       if (response.ok) {
@@ -744,7 +744,7 @@
 //   const fetchUserPurchases = async () => {
 //     try {
 //       const response = await fetch(
-//         `https://ethglobal-project-backend.onrender.com/api/v1/sites/user-purchases/${userId}`
+//         `https://ethglobal.azurewebsites.net/api/v1/sites/user-purchases/${userId}`
 //       );
 //       const data = await response.json();
 
@@ -1021,7 +1021,7 @@
 //   const fetchUserPurchases = async () => {
 //     try {
 //       const response = await fetch(
-//         `https://ethglobal-project-backend.onrender.com/api/v1/sites/user-purchases/${userId}`
+//         `https://ethglobal.azurewebsites.net/api/v1/sites/user-purchases/${userId}`
 //       );
 //       const data = await response.json();
 
@@ -1044,7 +1044,7 @@
 //         const totalReturn = await calculateTotalReturn(data.purchases);
 //         setUserTotalReturn(totalReturn);  // Set the total return
 //         try {
-//           await fetch(`https://ethglobal-project-backend.onrender.com/api/v1/users/${userId}/updateTotalReturn`, {
+//           await fetch(`https://ethglobal.azurewebsites.net/api/v1/users/${userId}/updateTotalReturn`, {
 //             method: "PUT",
 //             headers: {
 //               "Content-Type": "application/json",
@@ -1330,7 +1330,7 @@ const Home = () => {
   const fetchUserPurchases = async () => {
     try {
       const response = await fetch(
-        `https://ethglobal-project-backend.onrender.com/api/v1/sites/user-purchases/${userId}`
+        `https://ethglobal.azurewebsites.net/api/v1/sites/user-purchases/${userId}`
       );
       const data = await response.json();
 
@@ -1374,7 +1374,7 @@ const Home = () => {
       // Update total return in the backend
       try {
         await fetch(
-          `https://ethglobal-project-backend.onrender.com/api/v1/users/${userId}/updateTotalReturn`,
+          `https://ethglobal.azurewebsites.net/api/v1/users/${userId}/updateTotalReturn`,
           {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
