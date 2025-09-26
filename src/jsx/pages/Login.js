@@ -155,6 +155,7 @@ function Login() {
 	const [loading, setLoading] = useState(false);
 	const [errorMessage, setErrorMessage] = useState("");
 	const [successMessage, setSuccessMessage] = useState("");
+	const [isAdmin, setIsAdmin] = useState(false); // New state for admin login
 
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
@@ -276,6 +277,14 @@ function Login() {
 											Don't have an account?{" "}
 											<Link className="text-primary" to="/page-register">
 												Sign up
+											</Link>
+										</p>
+									</div>
+									<div>
+										<p onClick={() => setIsAdmin(true)} style={{ color: "black" }}>
+											Login as Admin?{" "}
+											<Link className="text-primary" to="/admin/login">
+												Click Here
 											</Link>
 										</p>
 									</div>

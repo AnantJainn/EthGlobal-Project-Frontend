@@ -4,6 +4,7 @@ import React from "react";
 import {
   formatError,
   login,
+  loginasAdmin,
   runLogoutTimer,
   saveTokenInLocalStorage,
   signUp,
@@ -137,6 +138,22 @@ export function loginAction(email, password, navigate) {
     };
 }
 
+export function loginActionasAdmin(email, password, navigate) {
+    return (dispatch) => {
+        loginasAdmin(email, password)
+            .then((response) => {
+                response.expiresIn = response.expiresIn || 3600; // Default expiresIn
+                saveTokenInLocalStorage(response);
+                // console.log("Dispatching loginConfirmedAction with:", response);
+                dispatch(loginConfirmedAction(response)); // This updates the Redux state
+                navigate('/adminDashboard');
+            })
+            .catch((error) => {
+                const errorMessage = formatError(error.response ? error.response.data : error.message);
+                dispatch(loginFailedAction(errorMessage));
+            });
+    };
+}
 
 export function loginFailedAction(error) {
   return {

@@ -128,6 +128,7 @@ import Setting from "./layouts/Setting";
 import { ThemeContext } from "../context/ThemeContext";
 import Power from "./components/Dashboard/Power";
 import Payout from "./components/Dashboard/Payout";
+import AdminDashboard from "./components/Dashboard/adminHome";
 
 const Markup = () => {
  // const { menuToggle, sidebariconHover } = useContext(ThemeContext);
@@ -135,6 +136,7 @@ const Markup = () => {
     /// allroutes
     { url: "", component: <Home /> },
     { url: "dashboard", component: <Home /> },
+    { url: "adminDashboard", component: <AdminDashboard /> },
     { url: "dashboard-dark", component: <DashboardDark/> },
     { url: "explore-NFTs", component: <Jobs/> },
     { url: "applications", component: <Applications/> },
