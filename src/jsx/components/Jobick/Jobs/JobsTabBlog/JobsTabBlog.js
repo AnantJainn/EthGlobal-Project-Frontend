@@ -4196,7 +4196,7 @@ const UserProfile = ({ nft, goBack }) => {
         key: orderData.razorpay_key,
         amount: orderData.amount,
         currency: orderData.currency,
-        name: "Enfros Solutions",
+        name: "WattWealth",
         description: `Payment for ${nft.title}`,
         image: "/logo.png",
         order_id: orderData.order_id,

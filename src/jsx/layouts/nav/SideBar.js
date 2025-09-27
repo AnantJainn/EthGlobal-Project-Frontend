@@ -291,9 +291,6 @@
 
 // export default SideBar;
 
-
-
-
 /// Menu
 //import Metismenu from "metismenujs";
 import React, { useReducer, useContext, useEffect, useState } from "react";
@@ -486,7 +483,9 @@ const SideBar = () => {
             } else {
               return (
                 <li
-                  className={` ${state.active === data.title ? "mm-active" : ""}`}
+                  className={` ${
+                    state.active === data.title ? "mm-active" : ""
+                  }`}
                   key={index}
                 >
                   {data.content && data.content.length > 0 ? (
@@ -525,7 +524,9 @@ const SideBar = () => {
                                     <>
                                       <Link
                                         to={data.to}
-                                        className={data.hasMenu ? "has-arrow" : ""}
+                                        className={
+                                          data.hasMenu ? "has-arrow" : ""
+                                        }
                                         onClick={() => {
                                           handleSubmenuActive(data.title);
                                         }}
@@ -589,8 +590,7 @@ const SideBar = () => {
 
         <div className="copyright">
           <p>
-            <strong>Enfros Solutions LLP</strong> © {d.getFullYear()} All Rights
-            Reserved
+            <strong>WattWealth</strong> © {d.getFullYear()} All Rights Reserved
           </p>
           {/* <p className="fs-12">
             Made with <span className="heart" onClick={()=>heartBlast()}></span> by 
