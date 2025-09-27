@@ -3809,7 +3809,7 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Card, Carousel, Accordion } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import NFT_ABI from "./contractabi.json";
-
+import axios from "axios"
 // Placeholder images
 import user from "./../../../../../images/user.jpg";
 import img1 from "../../../../../images/big/img1.jpg";
@@ -3854,124 +3854,19 @@ const JobsTabBlog = () => {
   const [loading, setLoading] = useState(true); // Loading state
   const [error, setError] = useState(null); // Error state
 
-  const fetchJobCardData = () => {
-    setLoading(true);
-    setError(null);
+  
+
+  // Fetch the data when the component loads
+  useEffect(() => {
+
+    const fetchJobCardData = async() => {
 
     try {
-      const hardcodedData = [
-        {
-          image: user,
-          title: "Unit-II Metal Profiles Indore",
-          subtitle: "Sanwer Road Industrial Area, Madhya Pradesh",
-          generation: "~3,60,000 kWh",
-          price: "Rs. 34,675",
-          plantSize: "250 kWp",
-          tarrif: 4.5,
-          overview:
-            "Installed on a 25,000 sq. ft industrial rooftop, this solar plant operates under a 15-year PPA with 100% offtake guarantee, offering secure and predictable returns for investors.",
-          technology: {
-            modules: "Trina Solar TOPCon 695 Wp – high-efficiency next-gen modules.",
-            inverter: "SolarEdge Inverters with Optimizers – advanced Israeli technology with module-level monitoring.",
-          },
-          performanceReturns:
-            "With an expected output of 1,450 kWh/kWp/year, the plant is designed to deliver consistently high returns. The PPA is structured as a ;Pay-as-you-generate' model, with a fixed tariff of ₹4.5/kWh for the entire term—ensuring predictable revenue and insulation from market volatility. Degradation of 2% in the first year and 0.5% yearly after one year will have long-term reducing gains.",
-          totalNFTs: 250,
-          isAvailable: true,
-          contractAddress: "0x1dd4A8bd06188f42636Ee300F67170B01e6fF8cF",
-        },
-        {
-          image: user,
-          title: "Project Spotlight: Metal Profiles Unit-III",
-          subtitle: "Bardari, Indore, Madhya Pradesh",
-          generation: "~7,02,500 kWh",
-          price: "Rs. 34,675",
-          plantSize: "493 kWp",
-          tarrif: 4.5,
-          tenure: "15-year Power Purchase Agreement (PPA)",
-          consumer: "Metal Profiles, a leading industrial unit in Indore",
-          offtakeGuarantee: "100% of generated power underwritten by the consumer",
-          omExpenses: "Rs. 25/month/kWp, increasing 2% annually",
-          overview:
-            "This rooftop solar plant is installed atop the expansive 70,000 sq. ft facility of Metal Profiles and serves as a model project for clean, secure, and profitable renewable energy investment. Backed by a 15-year Power Purchase Agreement with a guaranteed offtake of 7,02,500 kWh annually, this asset offers stable long-term income for investors.",
-          technology: {
-            modules:
-              "Trina Solar TOPCon 695 Wp and Solex MonoPERC 545 Wp – High-efficiency next-gen modules ensuring reliable yield.",
-            inverter:
-              "SolarEdge Inverters and Optimizers – Cutting-edge Israeli technology with module-level monitoring and safety."
-          },
-          warranties: {
-            modules: "30-year linear power warranty",
-            inverters: "12 years",
-            optimizers: "25 years"
-          },
-          performanceReturns:
-            "Expected output: 1,450 kWh/kWp/year. ROI: ~14%. Payback: ~5.5 years. Degradation: 2% in year 1, 0.5% annually thereafter.",
-          revenueModel: "Pay-as-you-generate at fixed ₹4.5/kWh for entire term",
-          totalNFTs: 493,
-          isAvailable: false
-        },
-        {
-          image: user,
-          title: "Project Spotlight: Metal Profiles Unit-I",
-          subtitle: "Sanwer Road Industrial Area, Indore, Madhya Pradesh",
-          generation: "~6,15,000 kWh",
-          price: "Rs. 34,675",
-          plantSize: "425 kWp",
-          tarrif: 4.5,
-          tenure: "15-year Power Purchase Agreement (PPA)",
-          consumer: "Metal Profiles, a leading industrial unit in Indore",
-          offtakeGuarantee: "100% of generated power underwritten by the consumer",
-          omExpenses: "Rs. 25/month/kWp, increasing 2% annually",
-          overview:
-            "This rooftop solar plant is installed atop the expansive 40,000 sq. ft facility of Metal Profiles and serves as a model project for clean, secure, and profitable renewable energy investment. Backed by a 15-year Power Purchase Agreement with a guaranteed offtake of 6,15,000 kWh annually, this asset offers stable long-term income for investors.",
-          technology: {
-            modules: "Trina Solar TOPCon 695 Wp – One of the most efficient next-gen modules available.",
-            inverter: "SolarEdge Inverters and Optimizers – Cutting-edge Israeli technology with module-level monitoring and safety."
-          },
-          warranties: {
-            modules: "30-year linear power warranty",
-            inverters: "12 years",
-            optimizers: "25 years"
-          },
-          performanceReturns: "Expected output: 1,450 kWh/kWp/year. ROI: ~12%. Payback: ~6 years. Degradation: 2% in year 1, 0.5% annually thereafter.",
-          revenueModel: "Pay-as-you-generate at fixed ₹4.5/kWh for entire term",
-          totalNFTs: 425,
-          isAvailable: false,
-          contractAddress: "0x9296368c5316317b4F4BD55574BD7A219676Cb41",
-        },
-        {
-          image: user,
-          title: "Project Spotlight: Hi-Tech Metal Formings Unit-II",
-          subtitle: "Bardari, Indore, Madhya Pradesh",
-          generation: "~1,45,000 kWh",
-          price: "Rs. 34,675",
-          plantSize: "100 kWp",
-          tarrif: 5.5,
-          tenure: "15-year Power Purchase Agreement (PPA)",
-          consumer: "Hi-Tech Metal Formings, a leading industrial unit in Indore",
-          offtakeGuarantee: "100% of generated power underwritten by the consumer",
-          omExpenses: "Rs. 25/month/kWp, increasing 2% annually",
-          overview:
-            "This rooftop solar plant is installed atop the expansive 10,000 sq. ft facility of Hi-Tech Metal Formings and serves as a model project for clean, secure, and profitable renewable energy investment. Backed by a 15-year Power Purchase Agreement with a guaranteed offtake of 3,60,000 kWh annually, this asset offers stable long-term income for investors.",
-          technology: {
-            modules: "Solex MonoPERC 545 Wp – High-performance panels ensuring reliable yield.",
-            inverter: "SolarEdge Inverters and Optimizers – Cutting-edge Israeli technology with module-level monitoring and safety."
-          },
-          warranties: {
-            modules: "30-year linear power warranty",
-            inverters: "12 years",
-            optimizers: "25 years"
-          },
-          performanceReturns:
-            "Expected output: 1,450 kWh/kWp/year. ROI: ~10%. Payback: ~7 years. Degradation: 2% in year 1, 0.5% annually thereafter.",
-          revenueModel: "Pay-as-you-generate at fixed ₹5.5/kWh for entire term",
-          totalNFTs: 100,
-          isAvailable: false
-        },
-      ];
-
-      setJobCardData(hardcodedData);
+      console.log('checkpoint 1');
+      const res = await axios.get("http://localhost:5000/api/v1/admin/services");
+      console.log('checkpoint 2');
+      console.log(res.data);
+      setJobCardData(res.data.data);
     } catch (err) {
       console.error("Error loading hardcoded data:", err);
       setError("Failed to load data.");
@@ -3980,8 +3875,6 @@ const JobsTabBlog = () => {
     }
   };
 
-  // Fetch the data when the component loads
-  useEffect(() => {
     fetchJobCardData();
   }, []);
 
@@ -4943,5 +4836,5 @@ const UserProfile = ({ nft, goBack }) => {
     </div>
   );
 };
-// export default UserProfile;
+
 export default JobsTabBlog;

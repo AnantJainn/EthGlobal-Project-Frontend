@@ -3,7 +3,7 @@ import axiosInstance from '../services/AxiosInstance';
 export function getPosts() {
     return axiosInstance.get(`posts.json`);
 }
-
+356404
 export function createPost(postData) {
     return axiosInstance.post(`posts.json`, postData);
 }

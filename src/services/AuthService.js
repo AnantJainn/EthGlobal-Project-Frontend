@@ -49,6 +49,28 @@ export async function login(email, password) {
         throw error; // Rethrow for further handling if needed
     }
 }
+export async function loginAsAdmin(email, password) {
+    try {
+        const response = await axios.post(`${BASE_URL}/users/login`, { email, password });
+        return response.data;
+    } catch (error) {
+        formatError(error);
+        throw error; // Rethrow for further handling if needed
+    }
+}
+
+
+
+export async function loginasAdmin(email, password) {
+    try {
+        const response = await axios.post(`${BASE_URL}/admin/login`, { email, password });
+        return response.data;
+    } catch (error) {
+        formatError(error);
+        throw error; // Rethrow for further handling if needed
+    }
+}
+
 
 /**
  * Send OTP to the user's email.
@@ -87,7 +109,9 @@ export async function verifyOtp(email, otp) {
  */
 export async function signUp(username, email, password) {
     try {
+        console.log("Signing up user:", { username, email });
         const response = await axios.post(`${BASE_URL}/users/signup`, { name: username, email, password });
+        console.log("Sign-up response:", response.data);
         return response.data;
     } catch (error) {
         formatError(error);

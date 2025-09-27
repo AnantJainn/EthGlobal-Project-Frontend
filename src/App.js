@@ -9,8 +9,8 @@ import { isAuthenticated } from './store/selectors/AuthSelectors';
 /// Style
 import "./vendor/bootstrap-select/dist/css/bootstrap-select.min.css";
 import "./css/style.css";
-
-
+import AdminDashboard from './jsx/components/Dashboard/adminHome';
+import Adminlogin from './jsx/pages/Adminlogin';
 const SignUp = lazy(() => import('./jsx/pages/Registration'));
 const ForgotPassword = lazy(() => import('./jsx/pages/ForgotPassword'));
 const Login = lazy(() => {
@@ -48,6 +48,8 @@ function App (props) {
             <Route path='/login' element={<Login />} />
             <Route path='/page-register' element={<SignUp />} />
             <Route path='/page-forgot-password' element={<ForgotPassword />} />
+            <Route path='/admin/home' element={<AdminDashboard />} />
+            <Route path='/admin/login' element={<Adminlogin />} />
         </Routes>
     );
     if (props.isAuthenticated) {
