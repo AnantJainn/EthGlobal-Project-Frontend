@@ -3863,7 +3863,7 @@ const JobsTabBlog = () => {
 
     try {
       console.log('checkpoint 1');
-      const res = await axios.get("http://localhost:5000/api/v1/admin/services");
+      const res = await axios.get("https://ethglobal.azurewebsites.net//api/v1/admin/services");
       console.log('checkpoint 2');
       console.log(res.data);
       setJobCardData(res.data.data);
