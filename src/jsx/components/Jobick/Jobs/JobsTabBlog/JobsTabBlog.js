@@ -4723,7 +4723,7 @@ const UserProfile = ({ nft, goBack }) => {
                 disabled={!nft.isAvailable || loadingSaleInfo || !saleActive}
                 className="btn btn-primary w-100"
               >
-                {nft.isAvailable ? "Buy" : "Sold Out"}
+                {nft.isAvailable ? "Buy with Fiat" : "Sold Out"}
               </button>
               <button
                 // onClick={() =>
@@ -4736,7 +4736,7 @@ const UserProfile = ({ nft, goBack }) => {
                 disabled={!nft.isAvailable || loadingSaleInfo || !saleActive}
                 className="btn btn-secondary w-100 mt-2"
               >
-                {nft.isAvailable ? "Pay with USDC" : "Sold Out"}
+                {nft.isAvailable ? "Buy with with PayPal USDC" : "Sold Out"}
               </button>
             </div>
           </div>
@@ -4823,7 +4823,7 @@ const UserProfile = ({ nft, goBack }) => {
                 disabled={!nft.isAvailable}
                 className="btn btn-primary w-100"
               >
-                {nft.isAvailable ? "Buy" : "Sold Out"}
+                {nft.isAvailable ? "Buy with fiat" : "Sold Out"}
               </button>
               <button
                 // onClick={() =>
