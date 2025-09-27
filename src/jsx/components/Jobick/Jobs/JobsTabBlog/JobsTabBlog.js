@@ -4233,7 +4233,7 @@ const UserProfile = ({ nft, goBack }) => {
       await provider.send("eth_requestAccounts", []);
       const signer = await provider.getSigner();
       const userAddress = await signer.getAddress();
-      const USDC_TOKEN_ADDRESS = "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359";
+      const USDC_TOKEN_ADDRESS = "0xCaC524BcA292aaade2DF8A05cC58F0a65B1B3bB9";
       // const NFT_CONTRACT_ADDRESS = "0x78F4ed9aD9B09535150a755E160a282b2E1639C4";
       const NFT_CONTRACT_ADDRESS = "0x1dd4A8bd06188f42636Ee300F67170B01e6fF8cF";
 
