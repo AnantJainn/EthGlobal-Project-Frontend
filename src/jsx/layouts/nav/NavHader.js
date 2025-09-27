@@ -90,13 +90,6 @@
 
 // export default NavHader;
 
-
-
-
-
-
-
-
 // import React, { useContext, useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
 // import { ThemeContext } from "../../../context/ThemeContext";
@@ -151,51 +144,51 @@
 
 // export default NavHader;
 
-
-
-
 import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../../../context/ThemeContext";
-import avatar from "../../../images/logo-full.png";
+import avatar from "../../../images/logo_ww_notext.png";
 
 const NavHader = () => {
-	const [toggle, setToggle] = useState(false);
-	const { navigationHader, openMenuToggle, background } = useContext(ThemeContext);
+  const [toggle, setToggle] = useState(false);
+  const { navigationHader, openMenuToggle, background } =
+    useContext(ThemeContext);
 
-	// Update the class on main-wrapper based on the toggle state
-	useEffect(() => {
-		const mainwrapper = document.getElementById("main-wrapper");
-		if (mainwrapper) {
-			if (toggle) {
-				mainwrapper.classList.add("menu-toggle");
-			} else {
-				mainwrapper.classList.remove("menu-toggle");
-			}
-		}
-	}, [toggle]);
+  // Update the class on main-wrapper based on the toggle state
+  useEffect(() => {
+    const mainwrapper = document.getElementById("main-wrapper");
+    if (mainwrapper) {
+      if (toggle) {
+        mainwrapper.classList.add("menu-toggle");
+      } else {
+        mainwrapper.classList.remove("menu-toggle");
+      }
+    }
+  }, [toggle]);
 
-	return (
-		<div className="nav-header">
-			<Link to="/dashboard" className="brand-logo">
-				<div className="me-4">
-					<img alt="images" width={150} src={avatar} />
-				</div>
-			</Link>
-			<div
-				className="nav-control"
-				onClick={() => {
-					setToggle(prevToggle => !prevToggle);
-				}}
-			>
-				<div className={`hamburger ${toggle ? "is-active" : ""}`}>
-					<span className="line"></span>
-					<span className="line"></span>
-					<span className="line"></span>
-				</div>
-			</div>
-		</div>
-	);
+  return (
+    <div className="nav-header">
+      <Link to="/dashboard" className="brand-logo">
+        <div className="me-4 ml-2 mb-10 mt-7">
+          {" "}
+          {/* added margin-bottom */}
+          <img alt="images" width={120} src={avatar} />
+        </div>
+      </Link>
+      <div
+        className="nav-control"
+        onClick={() => {
+          setToggle((prevToggle) => !prevToggle);
+        }}
+      >
+        <div className={`hamburger ${toggle ? "is-active" : ""}`}>
+          <span className="line"></span>
+          <span className="line"></span>
+          <span className="line"></span>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default NavHader;

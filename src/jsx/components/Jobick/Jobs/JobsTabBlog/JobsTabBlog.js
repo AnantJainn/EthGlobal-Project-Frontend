@@ -3117,13 +3117,11 @@
 //     fetchMintData();
 //   }, [nft.contractAddress]);
 
-
 //   // 2️⃣ Determine if minting is allowed by comparing BigNumbers:
 //   const isMintAvailable =
 //     nextTokenIdToMintVal != null &&
 //     maxKilowattsVal != null &&
 //     nextTokenIdToMintVal.lte(maxKilowattsVal);
-
 
 //   // Handle Razorpay Payment
 //   const handleRazorPayPayment = async () => {
@@ -3802,14 +3800,11 @@
 // // export default UserProfile;
 // export default JobsTabBlog;
 
-
-
-
 import React, { useState, useEffect } from "react";
 import { Row, Col, Card, Carousel, Accordion } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import NFT_ABI from "./contractabi.json";
-import axios from "axios"
+import axios from "axios";
 // Placeholder images
 import user from "./../../../../../images/user.jpg";
 import img1 from "../../../../../images/big/img1.jpg";
@@ -3854,26 +3849,24 @@ const JobsTabBlog = () => {
   const [loading, setLoading] = useState(true); // Loading state
   const [error, setError] = useState(null); // Error state
 
-  
-
   // Fetch the data when the component loads
   useEffect(() => {
-
-    const fetchJobCardData = async() => {
-
-    try {
-      console.log('checkpoint 1');
-      const res = await axios.get("https://ethglobal.azurewebsites.net//api/v1/admin/services");
-      console.log('checkpoint 2');
-      console.log(res.data);
-      setJobCardData(res.data.data);
-    } catch (err) {
-      console.error("Error loading hardcoded data:", err);
-      setError("Failed to load data.");
-    } finally {
-      setLoading(false);
-    }
-  };
+    const fetchJobCardData = async () => {
+      try {
+        console.log("checkpoint 1");
+        const res = await axios.get(
+          "https://ethglobal.azurewebsites.net//api/v1/admin/services"
+        );
+        console.log("checkpoint 2");
+        console.log(res.data);
+        setJobCardData(res.data.data);
+      } catch (err) {
+        console.error("Error loading hardcoded data:", err);
+        setError("Failed to load data.");
+      } finally {
+        setLoading(false);
+      }
+    };
 
     fetchJobCardData();
   }, []);
@@ -3938,8 +3931,11 @@ const JobsTabBlog = () => {
                         }
                       }}
                       disabled={!data.isAvailable}
-                      className={`btn ${data.isAvailable ? "btn-outline-success" : "btn-secondary"
-                        } mt-3`}
+                      className={`btn ${
+                        data.isAvailable
+                          ? "btn-outline-success"
+                          : "btn-secondary"
+                      } mt-3`}
                       title={
                         data.isAvailable ? "Buy now" : "Site is fully purchased"
                       }
@@ -4054,10 +4050,17 @@ const UserProfile = ({ nft, goBack }) => {
       }
 
       try {
-        console.log("[SaleCheck] Fetching on‐chain data for", nft.contractAddress);
-        // requires user to have MetaMask (for readRPC). 
+        console.log(
+          "[SaleCheck] Fetching on‐chain data for",
+          nft.contractAddress
+        );
+        // requires user to have MetaMask (for readRPC).
         const provider = new BrowserProvider(window.ethereum);
-        const contract = new ethers.Contract(nft.contractAddress, NFT_ABI, provider);
+        const contract = new ethers.Contract(
+          nft.contractAddress,
+          NFT_ABI,
+          provider
+        );
 
         // parallel fetch
         const [nextIdBN, maxKWBN] = await Promise.all([
@@ -4065,10 +4068,12 @@ const UserProfile = ({ nft, goBack }) => {
           contract.maxKilowatts(),
         ]);
 
-        console.log("[SaleCheck] nextTokenIdToMint (raw):", nextIdBN.toString());
+        console.log(
+          "[SaleCheck] nextTokenIdToMint (raw):",
+          nextIdBN.toString()
+        );
         console.log("[SaleCheck] maxKilowatts (raw):", maxKWBN.toString());
         console.log(nextIdBN < maxKWBN);
-
 
         const nextId = nextIdBN;
         const maxKW = maxKWBN;
@@ -4251,11 +4256,7 @@ const UserProfile = ({ nft, goBack }) => {
         throw new Error("Missing contract address for this site");
       }
 
-      const nftContract = new ethers.Contract(
-        contractAddress,
-        NFT_ABI,
-        signer
-      );
+      const nftContract = new ethers.Contract(contractAddress, NFT_ABI, signer);
       const contractPrice = await nftContract.pricePerNFT();
       console.log("price of nft", contractPrice);
       console.log("kWp", kWp);
@@ -4752,28 +4753,36 @@ const UserProfile = ({ nft, goBack }) => {
             <div className="card-body d-flex flex-column justify-content-center">
               <div className="col-xl-12">
                 <p className="font-w600 mb-2">
-                  <span className="custom-label-2">Site: <span className="font-w400">{nft.title}</span></span>
-
+                  <span className="custom-label-2">
+                    Site: <span className="font-w400">{nft.title}</span>
+                  </span>
                 </p>
                 <p className="font-w600 mb-2">
-                  <span className="custom-label-2">Location: <span className="font-w400">{nft.subtitle}</span></span>
-
+                  <span className="custom-label-2">
+                    Location: <span className="font-w400">{nft.subtitle}</span>
+                  </span>
                 </p>
                 <p className="font-w600 mb-2">
-                  <span className="custom-label-2">Plant Size: <span className="font-w400">{nft.plantSize}</span></span>
-
+                  <span className="custom-label-2">
+                    Plant Size:{" "}
+                    <span className="font-w400">{nft.plantSize}</span>
+                  </span>
                 </p>
                 <p className="font-w600 mb-2">
-                  <span className="custom-label-2">Total NFTs: <span className="font-w400">{nft.totalNFTs}</span></span>
-
+                  <span className="custom-label-2">
+                    Total NFTs:{" "}
+                    <span className="font-w400">{nft.totalNFTs}</span>
+                  </span>
                 </p>
                 <p className="font-w600 mb-2">
-                  <span className="custom-label-2">Plant Date: <span className="font-w400">17 Aug 2024</span></span>
-
+                  <span className="custom-label-2">
+                    Plant Date: <span className="font-w400">17 Aug 2024</span>
+                  </span>
                 </p>
                 <p className="font-w600 mb-2">
-                  <span className="custom-label-2">Tariff: <span className="font-w400">Rs. 4.75 per Unit</span></span>
-
+                  <span className="custom-label-2">
+                    Tariff: <span className="font-w400">Rs. 4.75 per Unit</span>
+                  </span>
                 </p>
               </div>
               <div className="d-flex align-items-center mt-3 justify-content-center">
