@@ -2068,6 +2068,7 @@ const UserProfile = ({ nft, goBack }) => {
                 {nft.isAvailable ? "Buy" : "Sold Out"}
               </button>
               <button
+              
                 // onClick={() =>
                 //   nft.isAvailable
                 //     ? purchaseWithUSDC()
