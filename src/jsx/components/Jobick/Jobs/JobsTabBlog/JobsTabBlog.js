@@ -1295,143 +1295,6 @@ const UserProfile = ({ nft, goBack }) => {
       console.error("Payment initiation error:", error);
     }
   };
-
-  // const purchaseWithUSDC = async () => {
-
-  //   if (!saleActive) {
-  //     return alert("Sorry, all NFTs are sold out on-chain.");
-  //   }
-  //   if (kWp <= 0) {
-  //     alert("Select at least 1 kWp");
-  //     return;
-  //   }
-
-  //   try {
-  //     // 1. Wallet connection
-  //     if (!window.ethereum) {
-  //       alert("Please install MetaMask");
-  //       return;
-  //     }
-
-  //     const provider = new ethers.BrowserProvider(window.ethereum);
-  //     await provider.send("eth_requestAccounts", []);
-  //     const signer = await provider.getSigner();
-  //     const userAddress = await signer.getAddress();
-  //     const USDC_TOKEN_ADDRESS = "0xCaC524BcA292aaade2DF8A05cC58F0a65B1B3bB9";
-  //     // const NFT_CONTRACT_ADDRESS = "0x78F4ed9aD9B09535150a755E160a282b2E1639C4";
-  //     const NFT_CONTRACT_ADDRESS = "0x1dd4A8bd06188f42636Ee300F67170B01e6fF8cF";
-
-  //     const usdc = new ethers.Contract(
-  //       USDC_TOKEN_ADDRESS,
-  //       [
-  //         "function allowance(address, address) view returns (uint256)",
-  //         "function approve(address, uint256) returns (bool)",
-  //         "function balanceOf(address) view returns (uint256)",
-  //       ],
-  //       signer
-  //     );
-  //     const contractAddress = nft.contractAddress;
-  //     if (!contractAddress) {
-  //       throw new Error("Missing contract address for this site");
-  //     }
-
-  //     const nftContract = new ethers.Contract(
-  //       contractAddress,
-  //       NFT_ABI,
-  //       signer
-  //     );
-  //     const contractPrice = await nftContract.pricePerNFT();
-  //     console.log("price of nft", contractPrice);
-  //     console.log("kWp", kWp);
-  //     // eslint-disable-next-line no-undef
-  //     const quantity = BigInt(kWp);
-  //     console.log("quantity", quantity);
-  //     const totalCost = contractPrice * quantity;
-  //     console.log("totalCost", totalCost);
-  //     const tokenIdCounter = await nftContract.totalSold();
-  //     console.log("token Id counter", tokenIdCounter);
-  //     const maxSupply = await nftContract.maxKilowatts();
-  //     console.log("maxSupply", maxSupply);
-  //     if (quantity > maxSupply - tokenIdCounter) {
-  //       throw new Error(`Only ${maxSupply - tokenIdCounter} kWp remaining`);
-  //     }
-  //     // 4. Check USDC balance
-  //     const balance = await usdc.balanceOf(userAddress);
-  //     if (balance < totalCost) {
-  //       throw new Error(
-  //         `Insufficient USDC balance. Needed: ${ethers.formatUnits(
-  //           totalCost,
-  //           6
-  //         )} USDC`
-  //       );
-  //     }
-
-  //     // 5. Check and request approval
-  //     const currentAllowance = await usdc.allowance(
-  //       userAddress,
-  //       NFT_CONTRACT_ADDRESS
-  //     );
-  //     // const quantity = parseInt(kWp);
-  //     // if (isNaN(quantity)) throw new Error("Invalid quantity");
-  //     if (!quantity || quantity <= 0) {
-  //       throw new Error("Invalid quantity (must be a positive integer)");
-  //     }
-
-  //     const approveTx = await usdc.approve(nftContract.target, totalCost);
-  //     await approveTx.wait();
-  //     const postApprovalAllowance = await usdc.allowance(
-  //       userAddress,
-  //       NFT_CONTRACT_ADDRESS
-  //     );
-  //     console.log("Post-approval allowance:", postApprovalAllowance.toString());
-
-  //     // Add 5-second block confirmation delay
-  //     await new Promise((resolve) => setTimeout(resolve, 5000));
-
-  //     // 6. Execute purchase after approval
-  //     const tx = await nftContract.purchaseUSDC(quantity, {
-  //       gasLimit: 1_000_000,
-  //     });
-  //     await tx.wait();
-
-  //     // Wait for transaction confirmation
-  //     const receipt = await tx.wait();
-  //     if (receipt.status === 0) {
-  //       throw new Error("Transaction failed");
-  //     }
-
-  //     alert("Purchase successful! 🎉");
-  //     // Inside purchaseWithUSDC function after successful TX
-  //     await fetch(
-  //       `https://ethglobal.azurewebsites.net/api/v1/sites/site-details`,
-  //       {
-  //         method: "POST",
-  //         headers: { "Content-Type": "application/json" },
-  //         // body: JSON.stringify({
-  //         //   action: "buy",
-  //         //   userId: userId,
-  //         //   siteName: nft.title,
-  //         //   kWp: kWp,
-  //         //   paymentMethod: "usdc", // Add payment method
-  //         // }),
-  //         body: JSON.stringify({
-  //           action: "buy",
-  //           userId: userId,
-  //           siteName: nft.title,
-  //           kWp: kWp,
-  //           paymentMethod: "usdc",
-  //           consumerWallet: consumerWallet.trim(),
-  //         }),
-  //       }
-  //     );
-  //     setkWp(0);
-  //     setTotalAmount(0);
-  //   } catch (err) {
-  //     console.error("USDC purchase failed:", err);
-  //     alert(`USDC purchase failed: ${err.reason || err.message}`);
-  //   }
-  // };
-
   // Verify payment and update backend
 
   const purchaseWithUSDC = async () => {
@@ -2065,10 +1928,9 @@ const UserProfile = ({ nft, goBack }) => {
                 disabled={!nft.isAvailable}
                 className="btn btn-primary w-100"
               >
-                {nft.isAvailable ? "Buy" : "Sold Out"}
+                {nft.isAvailable ? "Buy with Fiat" : "Sold Out"}
               </button>
               <button
-              
                 // onClick={() =>
                 //   nft.isAvailable
                 //     ? purchaseWithUSDC()
@@ -2079,7 +1941,9 @@ const UserProfile = ({ nft, goBack }) => {
                 disabled={!nft.isAvailable || loadingSaleInfo || !saleActive}
                 className="btn btn-secondary w-100 mt-2"
               >
-                {nft.isAvailable ? "Pay with USDC" : "Sold Out"}
+                {nft.isAvailable
+                  ? "Pay with Paypal USDC on sepolia"
+                  : "Sold Out"}
               </button>
             </div>
           </div>
